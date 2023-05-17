@@ -11,7 +11,7 @@ export class Menu {
           icon: 'assets/icons/outline/chart-pie.svg',
           label: 'Dashboard',
           route: '/dashboard',
-          children: [{ label: 'posts', route: '/dashboard/nfts' }],
+          children: [{ label: 'Posts', route: '/dashboard/nfts' }],
         },
         {
           icon: 'assets/icons/outline/lock-closed.svg',
