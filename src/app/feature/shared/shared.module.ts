@@ -13,6 +13,8 @@ import { NavbarMenuComponent } from './navbar/navbar-menu/navbar-menu.component'
 import { NavbarMobileComponent } from './navbar/navbar-mobile/navbar-mobile.component';
 import { NavbarSubmenuComponent } from './navbar/navbar-submenu/navbar-submenu.component';
 import { ProfileMenuComponent } from './navbar/profile-menu/profile-menu.component';
+import { NavbarMobileMenuComponent } from './navbar/navbar-mobile/navbar-mobile-menu/navbar-mobile-menu.component';
+import { NavbarMobileSubmenuComponent } from './navbar/navbar-mobile/navbar-mobile-submenu/navbar-mobile-submenu.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ProfileMenuComponent } from './navbar/profile-menu/profile-menu.compone
     NavbarMenuComponent,
     NavbarMobileComponent,
     NavbarSubmenuComponent,
-    ProfileMenuComponent
+    ProfileMenuComponent,
+    NavbarMobileMenuComponent,
+    NavbarMobileSubmenuComponent
   ],
   imports: [
     CommonModule,
