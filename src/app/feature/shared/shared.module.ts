@@ -6,6 +6,8 @@ import { SharedComponent } from './shared.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { SideBarMenuComponent } from './side-bar/side-bar-menu/side-bar-menu.component';
 import { SideBarSubmenuComponent } from './side-bar/side-bar-submenu/side-bar-submenu.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { SideBarSubmenuComponent } from './side-bar/side-bar-submenu/side-bar-su
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot()
   ]
 })
 export class SharedModule { }
