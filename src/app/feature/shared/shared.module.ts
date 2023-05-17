@@ -8,6 +8,11 @@ import { SideBarMenuComponent } from './side-bar/side-bar-menu/side-bar-menu.com
 import { SideBarSubmenuComponent } from './side-bar/side-bar-submenu/side-bar-submenu.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarMenuComponent } from './navbar/navbar-menu/navbar-menu.component';
+import { NavbarMobileComponent } from './navbar/navbar-mobile/navbar-mobile.component';
+import { NavbarSubmenuComponent } from './navbar/navbar-submenu/navbar-submenu.component';
+import { ProfileMenuComponent } from './navbar/profile-menu/profile-menu.component';
 
 
 @NgModule({
@@ -15,7 +20,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     SharedComponent,
     SideBarComponent,
     SideBarMenuComponent,
-    SideBarSubmenuComponent
+    SideBarSubmenuComponent,
+    NavbarComponent,
+    NavbarMenuComponent,
+    NavbarMobileComponent,
+    NavbarSubmenuComponent,
+    ProfileMenuComponent
   ],
   imports: [
     CommonModule,
