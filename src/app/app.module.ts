@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularSvgIconModule.forRoot()
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
