@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,21 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  form!: FormGroup;
+  signInForm!: FormGroup;
   submitted = false;
   passwordTextType!: boolean;
 
-  constructor(private readonly _formBuilder: FormBuilder, private readonly _router: Router) {}
+  constructor(private readonly _fb: FormBuilder, private router: Router, private api: ApiService) {}
 
   ngOnInit(): void {
-    this.form = this._formBuilder.group({
+    this.signInForm = this._fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
 
-  get f() {
-    return this.form.controls;
+  get form() {
+    return this.signInForm.controls;
   }
 
   togglePasswordTextType() {
@@ -30,14 +31,29 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-    const { email, password } = this.form.value;
-
-    // stop here if form is invalid
-    if (this.form.invalid) {
-      return;
+    if (this.signInForm.status === 'VALID') {
+      this.api.login().subscribe({
+        next: (res: any) => {
+          let response: any = res;
+          const user = response.find((a: any) => {
+            return a.email === this.signInForm.value.email && a.password === this.signInForm.value.password;
+          });
+          if(user){
+            alert("Login Successfully!!!!")
+            localStorage.setItem("user",JSON.stringify(response));
+              localStorage.setItem("isLoggedIn",'true');
+              this.router.navigate(['/post']);
+              this.api.isLoggedIn.next(true)
+          }else{
+            alert("Invalid Creditials")
+            this.router.navigate(['/sign-in']);
+          }
+        },
+        error: (err: any) => {
+          alert("Internal Server Error")
+        },
+      });
+    }else{
     }
-
-    this._router.navigate(['/']);
   }
 }
