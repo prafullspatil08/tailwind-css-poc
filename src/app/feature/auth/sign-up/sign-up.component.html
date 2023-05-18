@@ -91,16 +91,15 @@
 
   <div class="flex items-center justify-between space-x-3">
     <div class="flex items-center">
-      <input id="remember-me" name="remember-me" type="checkbox" />
-      <label for="remember-me" class="ml-2 block text-sm text-gray-400 dark:text-night-200"> Remember me </label>
-    </div>
-
-    <div class="text-sm">
-      <a routerLink="/auth/forgot-password" class="font-medium text-primary-500 hover:text-primary-400">
-        Forgot your password?
-      </a>
+      <input id="accept-term" name="accept-term" type="checkbox" />
+      <label for="accept-term" class="ml-2 block text-sm text-gray-400 dark:text-night-200">
+        I Accept the
+        <a class="font-medium text-primary-500 hover:text-primary-400"> Terms </a>
+      </label>
     </div>
   </div>
+
+    
 
   <!-- Submit Button -->
   <button
@@ -110,6 +109,6 @@
 
   <!-- Sign-up -->
   <div class="text-sm text-gray-400 dark:text-night-200">
-    Not a Member yet? <a routerLink="/auth/sign-up" class="text-primary-500 hover:text-primary-400">Sign up</a>
+    Already have an Account?  <a routerLink="/auth/sign-in" class="text-primary-500 hover:text-primary-400">Sign in</a>
   </div>
 </form>
