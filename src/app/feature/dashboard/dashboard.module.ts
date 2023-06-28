@@ -19,6 +19,7 @@ import { MainPageComponent } from './dashboard/main-page/main-page.component';
 import { PostComponent } from './dashboard/post/post.component';
 import { AddPostComponent } from './dashboard/add-post/add-post.component';
 import { PostDetailsComponent } from './dashboard/post-details/post-details.component';
+import { ContentLayoutComponent } from './dashboard/content-layout/content-layout.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { PostDetailsComponent } from './dashboard/post-details/post-details.comp
     MainPageComponent,
     PostComponent,
     AddPostComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    ContentLayoutComponent
   ],
   imports: [
     CommonModule,

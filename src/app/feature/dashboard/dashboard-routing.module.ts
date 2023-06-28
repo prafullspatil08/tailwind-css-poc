@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 import { MainPageComponent } from './dashboard/main-page/main-page.component';
 import { PostComponent } from './dashboard/post/post.component';
 import { AddPostComponent } from './dashboard/add-post/add-post.component';
+import { ContentLayoutComponent } from './dashboard/content-layout/content-layout.component';
+import { PostDetailsComponent } from './dashboard/post-details/post-details.component';
 
 const routes: Routes = [
   {
@@ -16,12 +18,23 @@ const routes: Routes = [
     },
     {
       path: 'post',
-      component: PostComponent
+      component: ContentLayoutComponent,
+      children:[
+        {
+          path: '',
+          component: PostComponent
+        },
+        {
+          path: 'add-post',
+          component: AddPostComponent
+        },
+        {
+          path: ':id/single-post',
+          component: PostDetailsComponent
+        }
+      ]
     },
-    {
-      path: ':id/single-post',
-      component: AddPostComponent
-    },
+  
   ]
   },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
