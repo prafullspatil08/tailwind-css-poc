@@ -16,6 +16,7 @@ import { ProfileMenuComponent } from './navbar/profile-menu/profile-menu.compone
 import { NavbarMobileMenuComponent } from './navbar/navbar-mobile/navbar-mobile-menu/navbar-mobile-menu.component';
 import { NavbarMobileSubmenuComponent } from './navbar/navbar-mobile/navbar-mobile-submenu/navbar-mobile-submenu.component';
 import { MainPageComponent } from './dashboard/main-page/main-page.component';
+import { PostComponent } from './dashboard/post/post.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MainPageComponent } from './dashboard/main-page/main-page.component';
     ProfileMenuComponent,
     NavbarMobileMenuComponent,
     NavbarMobileSubmenuComponent,
-    MainPageComponent
+    MainPageComponent,
+    PostComponent
   ],
   imports: [
     CommonModule,
