@@ -69,7 +69,7 @@ export class PostDetailsComponent {
     }
     this.api.saveComment(payload).subscribe((res:any)=>{
       alert("Comment Added Successfully")
-      this.router.navigate(['/posts']);
+      this.router.navigate(['/dashboard/posts']);
     })
   }
 }

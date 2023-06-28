@@ -31,7 +31,7 @@ export class AddPostComponent {
       this.api.postBlog(this.addPostForm.value).subscribe((res)=>{
         alert('Post Added Successfully')
         localStorage.setItem("post",JSON.stringify(this.addPostForm.value));
-        this.router.navigate(['/dashboard/post']);
+        this.router.navigate(['/dashboard/posts']);
       } )
     }else{
       alert('Please Enter Valid Details')

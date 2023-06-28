@@ -13,7 +13,7 @@ export class Menu {
           route: '/dashboard',
           children: [
             { label: 'Dashboard', route: '/dashboard/' },
-            { label: 'Posts', route: '/dashboard/post' }
+            { label: 'Posts', route: '/dashboard/posts' }
           ],
         },
         {

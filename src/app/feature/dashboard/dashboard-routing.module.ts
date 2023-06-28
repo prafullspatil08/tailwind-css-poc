@@ -17,7 +17,7 @@ const routes: Routes = [
       component: MainPageComponent
     },
     {
-      path: 'post',
+      path: 'posts',
       component: ContentLayoutComponent,
       children:[
         {
@@ -25,11 +25,11 @@ const routes: Routes = [
           component: PostComponent
         },
         {
-          path: 'add-post',
+          path: 'new',
           component: AddPostComponent
         },
         {
-          path: ':id/single-post',
+          path: ':id/post',
           component: PostDetailsComponent
         }
       ]

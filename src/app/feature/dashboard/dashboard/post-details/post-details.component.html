@@ -1,7 +1,7 @@
 <div
   class="flex justify-between text-xl font-medium text-gray-900 dark:text-night-200"
 >
-  <a class="rounded bg-primary-500 p-2" routerLink="/dashboard/post">
+  <a class="rounded bg-primary-500 p-2" routerLink="/dashboard/posts">
     <svg-icon
       src="assets/icons/outline/arrow-left-solid.svg"
       [svgClass]="'h-5 w-5'"
@@ -52,6 +52,7 @@
     >
       <button
         type="submit"
+        *ngIf="!showCommentBtn"
         data-modal-target="authentication-modal"
         data-modal-toggle="authentication-modal"
         class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2.5 text-center text-xs font-medium text-gray-900 focus:ring-4 focus:ring-primary-200 hover:bg-primary-800 dark:focus:ring-primary-900"
