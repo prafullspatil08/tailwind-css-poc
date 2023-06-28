@@ -51,7 +51,7 @@
       </div>
     </div>
     <!-- Sign out -->
-    <div
+    <div *ngIf="isLoggedIn"
       class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
       <svg-icon src="assets/icons/outline/logout.svg" [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
       </svg-icon>

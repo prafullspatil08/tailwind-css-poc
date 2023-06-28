@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/core/services/api.service';
 import { MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
@@ -7,9 +8,14 @@ import { MenuService } from 'src/app/core/services/menu.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent  implements OnInit  {
-  constructor(private menuService: MenuService) {}
+  isLoggedIn:boolean = false;
+  constructor(private menuService: MenuService, private api: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.api.isLoggedIn.subscribe((res)=> {
+      this.isLoggedIn = res;
+    })
+  }
 
   public toggleMobileMenu(): void {
     this.menuService.showMobileMenu = true;

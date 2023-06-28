@@ -42,10 +42,10 @@ export class SignInComponent implements OnInit {
             alert("Login Successfully!!!!")
             localStorage.setItem("user",JSON.stringify(response));
               localStorage.setItem("isLoggedIn",'true');
-              this.router.navigate(['/post']);
+              this.router.navigate(['/dashboard']);
               this.api.isLoggedIn.next(true)
           }else{
-            alert("Invalid Creditials")
+            alert("Invalid Credentials")
             this.router.navigate(['/sign-in']);
           }
         },
