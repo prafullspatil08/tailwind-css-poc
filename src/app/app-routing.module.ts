@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./feature/shared/shared.module').then((m) => m.SharedModule),
+    loadChildren: () => import('./feature/dashboard/dashboard.module').then((m) => m.SharedModule),
   },
   {
     path: 'auth',
