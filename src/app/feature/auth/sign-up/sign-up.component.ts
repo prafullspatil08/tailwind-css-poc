@@ -12,13 +12,18 @@ export class SignUpComponent {
   signUpForm!:FormGroup  ;
   passwordTextType!: boolean;
   submitted = false;
+  passwordPattern: any =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*^?&\.])[A-Za-z\d@#$!%*^?&\.]{8,15}$/;
+  emailPattern: any =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  mobilePattern = /^[0-9]{10}$/
   constructor(private _fb: FormBuilder, private router: Router, private api: ApiService) {}
   
   ngOnInit(): void {
     this.signUpForm = this._fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      phone_no: ['',Validators.required]
+      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      password: ['', [Validators.required,Validators.pattern(this.passwordPattern)]],
+      phone_no: ['',[Validators.required,Validators.pattern(this.mobilePattern)]]
     });
   }
 

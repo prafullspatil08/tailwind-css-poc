@@ -12,13 +12,16 @@ export class SignInComponent implements OnInit {
   signInForm!: FormGroup;
   submitted = false;
   passwordTextType!: boolean;
-
+  passwordPattern: any =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*^?&\.])[A-Za-z\d@#$!%*^?&\.]{8,15}$/;
+  emailPattern: any =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   constructor(private readonly _fb: FormBuilder, private router: Router, private api: ApiService) {}
 
   ngOnInit(): void {
     this.signInForm = this._fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      password: ['', [Validators.required,Validators.pattern(this.passwordPattern)]],
     });
   }
 
