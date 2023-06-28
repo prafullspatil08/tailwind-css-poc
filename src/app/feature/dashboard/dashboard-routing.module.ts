@@ -3,18 +3,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { MainPageComponent } from './dashboard/main-page/main-page.component';
 import { PostComponent } from './dashboard/post/post.component';
+import { AddPostComponent } from './dashboard/add-post/add-post.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    children: [{
+    children: [
+    {
       path: '',
       component: MainPageComponent
     },
     {
       path: 'post',
       component: PostComponent
+    },
+    {
+      path: ':id/single-post',
+      component: AddPostComponent
     },
   ]
   },
