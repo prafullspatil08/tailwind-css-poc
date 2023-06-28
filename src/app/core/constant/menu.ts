@@ -27,17 +27,6 @@ export class Menu {
         },
       ],
     },
-    {
-      group: 'Config',
-      separator: false,
-      items: [
-        {
-          icon: 'assets/icons/outline/cog.svg',
-          label: 'Settings',
-          route: '/settings',
-        },
-      
-      ],
-    },
+  
   ];
 }

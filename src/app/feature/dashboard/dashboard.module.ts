@@ -9,7 +9,6 @@ import { SideBarSubmenuComponent } from './side-bar/side-bar-submenu/side-bar-su
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NavbarMenuComponent } from './navbar/navbar-menu/navbar-menu.component';
 import { NavbarMobileComponent } from './navbar/navbar-mobile/navbar-mobile.component';
 import { NavbarSubmenuComponent } from './navbar/navbar-submenu/navbar-submenu.component';
 import { ProfileMenuComponent } from './navbar/profile-menu/profile-menu.component';
@@ -30,7 +29,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SideBarMenuComponent,
     SideBarSubmenuComponent,
     NavbarComponent,
-    NavbarMenuComponent,
     NavbarMobileComponent,
     NavbarSubmenuComponent,
     ProfileMenuComponent,
