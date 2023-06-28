@@ -18,9 +18,9 @@ export class AddPostComponent {
   constructor(private _fb:FormBuilder, private api:ApiService, private router: Router){}
   ngOnInit(): void {
     this.addPostForm = this._fb.group({
-      title: ['', Validators.required],
-      author: ['', Validators.required],
-      description : ['',Validators.required],
+      title: ['', [Validators.required]],
+      author: ['', [Validators.required]],
+      description : ['',[Validators.required]],
       publish_date:[new Date()],
       techType:['',[Validators.required]]
     })
@@ -33,9 +33,11 @@ export class AddPostComponent {
         localStorage.setItem("post",JSON.stringify(this.addPostForm.value));
         this.router.navigate(['/dashboard/posts']);
       } )
-    }else{
-      alert('Please Enter Valid Details')
     }
+  }
+
+  get form() {
+    return this.addPostForm.controls;
   }
 
 }
