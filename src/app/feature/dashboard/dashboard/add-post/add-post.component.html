@@ -2,9 +2,13 @@
   class="w-full mx-auto max-w-xxl dark:bg-night-800 dark:border-night-700"
 >
   <form class="space-y-6" [formGroup]="addPostForm">
-    <h5 class="text-xl text-center font-medium text-gray-900 dark:text-night-200">
-      Add Post To Our Platform
-    </h5>
+    <div class="text-xl flex  justify-between font-medium text-gray-900 dark:text-night-200">
+      <a class="rounded bg-primary-500 p-2" routerLink="/dashboard/post">
+        <svg-icon src="assets/icons/outline/arrow-left-solid.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+      </a>
+      <h5 class="mt-2">Add Post To Our Platform</h5>
+      <div></div>
+    </div>
     <div>
       <label
         for="title"
