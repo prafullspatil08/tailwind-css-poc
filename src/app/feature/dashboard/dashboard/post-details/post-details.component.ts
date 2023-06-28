@@ -43,7 +43,7 @@ export class PostDetailsComponent {
 
   initializeForm() {
     this.commentDetailForm = this._fb.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required,Validators.email]],
       commentMsg:['',Validators.required]
     });
   }
@@ -53,6 +53,7 @@ export class PostDetailsComponent {
   }
 
   postComment() {
+    if(this.commentDetailForm.status == 'VALID'){
     let payload = {
       commentMsg: this.commentDetailForm.controls['commentMsg'].value,
       email: this.commentDetailForm.controls['email'].value,
@@ -62,5 +63,6 @@ export class PostDetailsComponent {
       alert("Comment Added Successfully")
       this.router.navigate(['/dashboard/posts']);
     })
+  }
   }
 }
