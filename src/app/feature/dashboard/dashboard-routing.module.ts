@@ -6,6 +6,7 @@ import { PostComponent } from './dashboard/post/post.component';
 import { AddPostComponent } from './dashboard/add-post/add-post.component';
 import { ContentLayoutComponent } from './dashboard/content-layout/content-layout.component';
 import { PostDetailsComponent } from './dashboard/post-details/post-details.component';
+import { AddPostGuard } from 'src/app/core/guard/add-post.guard';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
         },
         {
           path: 'new',
-          component: AddPostComponent
+          component: AddPostComponent,
+          canActivate: [AddPostGuard]
         },
         {
           path: ':id/post',

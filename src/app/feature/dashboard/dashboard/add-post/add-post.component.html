@@ -1,14 +1,15 @@
 <div
   class="w-full mx-auto max-w-xxl dark:bg-night-800 dark:border-night-700"
 >
+<div class="text-xl flex  justify-between font-medium text-gray-900 dark:text-night-200">
+  <a class="rounded bg-primary-500 p-2 " routerLink="/dashboard/posts">
+    <svg-icon src="assets/icons/outline/arrow-left-solid.svg" [svgClass]="'h-5 w-5 fill-white'"> </svg-icon>
+  </a>
+  <h5 class="mt-2">Add Post To Our Platform</h5>
+  <div></div>
+</div>
+<div class="px-20 py-5">
   <form class="space-y-6" [formGroup]="addPostForm">
-    <div class="text-xl flex  justify-between font-medium text-gray-900 dark:text-night-200">
-      <a class="rounded bg-primary-500 p-2" routerLink="/dashboard/posts">
-        <svg-icon src="assets/icons/outline/arrow-left-solid.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
-      </a>
-      <h5 class="mt-2">Add Post To Our Platform</h5>
-      <div></div>
-    </div>
     <div>
       <label
         for="title"
@@ -66,7 +67,8 @@
       ></textarea>
     </div>
 
-    <button (click)="addPost()" type="submit" class="w-full text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Add Post</button>
+    <button (click)="addPost()" type="submit" class="w-full font-semibold text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Add Post</button>
       
   </form>
+</div>
 </div>

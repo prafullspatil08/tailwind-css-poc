@@ -11,7 +11,11 @@ export class AddPostGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (!this.api.isLoggedIn) {
+      let isLoggedIn:boolean = false
+      this.api.isLoggedIn.subscribe((res)=>{
+        isLoggedIn = res;
+      })
+      if (isLoggedIn) {
         return true;
       } else {
         this.router.navigate(['auth/sign-in']);

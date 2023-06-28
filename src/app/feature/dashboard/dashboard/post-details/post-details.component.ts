@@ -43,28 +43,19 @@ export class PostDetailsComponent {
 
   initializeForm() {
     this.commentDetailForm = this._fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
       email: ['', Validators.required],
-      phoneNo: ['', Validators.required],
+      commentMsg:['',Validators.required]
     });
   }
 
   getFirstName() {
     return this.commentDetailForm.controls['firstName'] as FormControl;
   }
-  registeredUser() {
-    $('#close_modal').click();
-    this.showCommentBtn = true
-  }
 
   postComment() {
     let payload = {
-      commentMsg: this.commentMsg,
-      firstName: this.commentDetailForm.controls['firstName'].value,
-      lastName: this.commentDetailForm.controls['lastName'].value,
+      commentMsg: this.commentDetailForm.controls['commentMsg'].value,
       email: this.commentDetailForm.controls['email'].value,
-      phoneNo: this.commentDetailForm.controls['phoneNo'].value,
       blogDetails: this.blogDetails
     }
     this.api.saveComment(payload).subscribe((res:any)=>{
