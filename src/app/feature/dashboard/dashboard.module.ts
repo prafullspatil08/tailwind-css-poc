@@ -20,6 +20,7 @@ import { PostComponent } from './dashboard/post/post.component';
 import { AddPostComponent } from './dashboard/add-post/add-post.component';
 import { PostDetailsComponent } from './dashboard/post-details/post-details.component';
 import { ContentLayoutComponent } from './dashboard/content-layout/content-layout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -44,6 +45,8 @@ import { ContentLayoutComponent } from './dashboard/content-layout/content-layou
   imports: [
     CommonModule,
     SharedRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AngularSvgIconModule.forRoot()
   ]
